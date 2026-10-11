@@ -2,19 +2,6 @@
 
 Учебный журнал: список студентов, группа, баллы, посещаемость и фильтр на стипендию.
 
-## Запуск
-
-
-```bash
-python -m venv .venv
-# Linux/macOS:
-source .venv/bin/activate
-# Windows PowerShell:
-.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-python main.py
-```
-
 ## Cоответствие заданию
 
 - Основная сущность `Student` наследуется от абстрактного класса `Entity` из `common.py`.
