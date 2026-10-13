@@ -3,7 +3,7 @@ from common import Entity
 
 
 class Student(Entity):
-    """Карточка студента с оценкой и посещаемостью."""
+
 
     def __init__(self, entity_id: str, full_name: str, group_name: str, grade: int, attendance: int, assessment_date: str, notes: str = "") -> None:
         self.entity_id = entity_id
