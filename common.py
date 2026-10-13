@@ -1,4 +1,3 @@
-"""Общие классы: абстрактная сущность, пользовательская карта и отчет о сеансах."""
 from __future__ import annotations
 
 import csv
@@ -21,7 +20,7 @@ class Entity(ABC):
 
 
 class EntityMap(Generic[T]):
-    """Простое отображение ключ -> объект на основе списка пар, без dict."""
+    """Простое отображение ключ"""
 
     def __init__(self) -> None:
         self._pairs: list[tuple[str, T]] = []
@@ -91,7 +90,6 @@ class EntityMap(Generic[T]):
 
 
 class SessionRecord(Entity):
-    """Сеанс работы приложения: пользователь, вход и выход."""
 
     def __init__(self, login: str, time_in: datetime, time_out: datetime | None = None) -> None:
         self.login = login
