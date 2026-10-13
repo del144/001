@@ -11,16 +11,16 @@ DATETIME_FORMAT = "%d.%m.%Y %H:%M:%S"
 
 
 class Entity(ABC):
-    """Абстрактная базовая сущность предметной области."""
+
 
     @abstractmethod
     def summary(self) -> str:
-        """Вернуть короткое текстовое описание сущности."""
+
         raise NotImplementedError
 
 
 class EntityMap(Generic[T]):
-    """Простое отображение ключ"""
+
 
     def __init__(self) -> None:
         self._pairs: list[tuple[str, T]] = []
@@ -154,7 +154,7 @@ class SessionRecord(Entity):
 
 
 class ReportWriter:
-    """Сохраняет историю сеансов в CSV и оформленный TXT-отчет."""
+
 
     def __init__(self, directory: Path) -> None:
         self._directory = directory
