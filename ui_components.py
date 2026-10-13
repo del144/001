@@ -1,4 +1,3 @@
-"""Пользовательские Qt-виджеты с переопределенными обработчиками событий."""
 from __future__ import annotations
 
 from PySide6.QtCore import Qt, Signal, QDate
@@ -20,7 +19,7 @@ from PySide6.QtWidgets import (
 
 
 class HoverButton(QPushButton):
-    """Кнопка с переопределенными событиями наведения и нажатия."""
+
 
     def enterEvent(self, event) -> None:
         self.setCursor(Qt.CursorShape.PointingHandCursor)
@@ -45,7 +44,7 @@ class HoverButton(QPushButton):
 
 
 class FocusLineEdit(QLineEdit):
-    """Поле ввода с реакцией на фокус и очисткой по Escape."""
+
 
     def focusInEvent(self, event) -> None:
         self.setProperty("focused", True)
@@ -77,7 +76,7 @@ class ClickableLabel(QLabel):
 
 
 class HintListWidget(QListWidget):
-    """Список с обработкой клавиатурных событий."""
+
 
     def keyPressEvent(self, event) -> None:
         if event.key() == Qt.Key.Key_Escape:
@@ -98,7 +97,7 @@ class SafeComboBox(QComboBox):
 
 
 class AnimatedCheckBox(QCheckBox):
-    """Чекбокс, обновляющий свой стиль при смене состояния."""
+
 
     def nextCheckState(self) -> None:
         super().nextCheckState()
@@ -108,7 +107,7 @@ class AnimatedCheckBox(QCheckBox):
 
 
 class ValidatedSpinBox(QSpinBox):
-    """Целочисленный счетчик с безопасным изменением значения."""
+
 
     def stepBy(self, steps: int) -> None:
         super().stepBy(steps)
@@ -146,14 +145,14 @@ class NoteTextEdit(QTextEdit):
 
 
 class StatusProgressBar(QProgressBar):
-    """Полоса прогресса с собственным обработчиком отрисовки."""
+
 
     def paintEvent(self, event) -> None:
         super().paintEvent(event)
 
 
 class GroupPanel(QGroupBox):
-    """Группа формы, визуально реагирующая на наведение мыши."""
+
 
     def enterEvent(self, event) -> None:
         self.setProperty("hovered", True)
@@ -169,7 +168,7 @@ class GroupPanel(QGroupBox):
 
 
 class MainAppWindow(QMainWindow):
-    """Основное окно, вызывающее переданную процедуру при закрытии."""
+
 
     def __init__(self) -> None:
         super().__init__()
@@ -187,7 +186,7 @@ class MainAppWindow(QMainWindow):
 
 
 def apply_app_style(widget: QMainWindow) -> None:
-    """Единый стиль и размеры для выравнивания элементов интерфейса."""
+
     widget.setStyleSheet("""
         QMainWindow, QWidget { background: #f4f7fb; color: #253247; font-size: 13px; }
         QLabel { background: transparent; }
